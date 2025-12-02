@@ -17,6 +17,7 @@ export default function Home() {
           loop
           muted
           playsInline
+          preload="auto"
         >
           <source src="/mlhero.mp4" type="video/mp4" />
         </video>

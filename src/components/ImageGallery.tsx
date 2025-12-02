@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function ImageGallery() {
   return (
-    <section className="w-full flex">
-      <div className="relative flex-1 aspect-square overflow-hidden">
+    <section className="w-full flex flex-col md:flex-row">
+      <div className="relative w-full md:flex-1 aspect-square overflow-hidden">
         <Image
           src="/image1.jpg"
           alt="Gallery image 1"
@@ -11,7 +11,7 @@ export default function ImageGallery() {
           className="object-cover"
         />
       </div>
-      <div className="relative flex-1 aspect-square overflow-hidden">
+      <div className="relative w-full md:flex-1 aspect-square overflow-hidden">
         <Image
           src="/image2.jpg"
           alt="Gallery image 2"
@@ -19,7 +19,7 @@ export default function ImageGallery() {
           className="object-cover"
         />
       </div>
-      <div className="relative flex-1 aspect-square overflow-hidden">
+      <div className="relative w-full md:flex-1 aspect-square overflow-hidden">
         <Image
           src="/image3.jpg"
           alt="Gallery image 3"

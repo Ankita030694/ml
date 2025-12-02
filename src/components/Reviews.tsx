@@ -26,31 +26,31 @@ export default function Reviews() {
   const [currentReview, setCurrentReview] = useState(0);
 
   return (
-    <section className="py-14 px-6 md:px-11 lg:px-17 bg-[#FFE3C5]">
+    <section className="py-10 md:py-12 lg:py-14 px-4 sm:px-6 md:px-11 lg:px-17 bg-[#FFE3C5]">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-20 items-center justify-center">
-          <div className="relative w-full max-w-md lg:max-w-lg h-96 lg:h-[520px] flex-shrink-0">
+        <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-20 items-center justify-center">
+          <div className="relative w-full max-w-md lg:max-w-lg h-64 sm:h-80 md:h-96 lg:h-[520px] flex-shrink-0">
             <Image
               src="/reviewleft.jpg"
               alt="Restaurant dish"
               fill
-              className="object-cover"
+              className="object-cover rounded-lg"
             />
           </div>
 
-          <div className="flex flex-col w-full max-w-2xl gap-8 items-center">
-            <div className="flex p-5 justify-center items-center rounded-[20px] border-[3px] border-[#8C3A3A] bg-white w-full">
-              <p className="text-black font-poppins text-lg md:text-xl lg:text-[25px] font-medium leading-[1.16]">
+          <div className="flex flex-col w-full max-w-2xl gap-6 md:gap-8 items-center">
+            <div className="flex p-4 md:p-5 justify-center items-center rounded-[20px] border-[3px] border-[#8C3A3A] bg-white w-full">
+              <p className="text-black font-poppins text-base sm:text-lg md:text-xl lg:text-[25px] font-medium leading-[1.16]">
                 {reviews[currentReview].text}
               </p>
             </div>
 
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-4 md:gap-5">
               {reviews.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentReview(index)}
-                  className={`w-5 h-5 rounded-full transition-colors ${
+                  className={`w-4 h-4 md:w-5 md:h-5 rounded-full transition-colors ${
                     index === currentReview ? 'bg-[#8C3A3A]' : 'bg-[#F09E9E]'
                   }`}
                   aria-label={`Go to review ${index + 1}`}
