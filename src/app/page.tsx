@@ -1,6 +1,6 @@
 import Navbar from "@/components/Navbar";
 import OurStory from "@/components/OurStory";
-import Instagram from "@/components/Instagram";
+import FollowSection from "@/components/FollowSection";
 import CTA from "@/components/CTA";
 import ImageGallery from "@/components/ImageGallery";
 import Reviews from "@/components/Reviews";
@@ -24,7 +24,7 @@ export default function Home() {
         </video>
       </div>
       <OurStory />
-      <Instagram />
+      <FollowSection />
       <CTA />
       <ImageGallery />
       <Reviews />
