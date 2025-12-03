@@ -4,6 +4,7 @@ import Instagram from "@/components/Instagram";
 import CTA from "@/components/CTA";
 import ImageGallery from "@/components/ImageGallery";
 import Reviews from "@/components/Reviews";
+import Testimonial from "@/components/Testimonial";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -27,6 +28,7 @@ export default function Home() {
       <CTA />
       <ImageGallery />
       <Reviews />
+      <Testimonial />
       <Footer />
     </>
   );

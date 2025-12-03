@@ -34,12 +34,12 @@ export default function Footer() {
               Quick Links
             </h3>
             <div className="flex flex-col items-start gap-[16px] w-full">
-              <a href="#home" className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] md:text-[18px] font-medium leading-[18px] no-underline">
+              <Link href="/" className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] md:text-[18px] font-medium leading-[18px] no-underline">
                 Home
-              </a>
-              <a href="#about" className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] md:text-[18px] font-medium leading-[18px] no-underline">
+              </Link>
+              <Link href="/about" className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] md:text-[18px] font-medium leading-[18px] no-underline">
                 About
-              </a>
+              </Link>
               <a href="#reservation" className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] md:text-[18px] font-medium leading-[18px] no-underline">
                 Reservation
               </a>

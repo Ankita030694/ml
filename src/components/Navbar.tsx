@@ -34,7 +34,7 @@ export default function Navbar() {
 
       {/* Desktop Navigation Links */}
       <div className="hidden md:flex items-center gap-[22px]">
-        <a href="#about" className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[18px] font-medium leading-[18px] no-underline cursor-pointer">ABOUT</a>
+        <Link href="/about" className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[18px] font-medium leading-[18px] no-underline cursor-pointer">ABOUT</Link>
         <Link href="/contact" className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[18px] font-medium leading-[18px] no-underline cursor-pointer">CONTACT</Link>
         <a href="#menu" className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[18px] font-medium leading-[18px] no-underline cursor-pointer">MENU</a>
       </div>
@@ -70,13 +70,13 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-[#3C1E03] flex flex-col gap-4 p-4 md:hidden z-50 border-t border-[#512904]">
-          <a 
-            href="#about" 
+          <Link 
+            href="/about" 
             onClick={() => setIsMenuOpen(false)}
             className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] font-medium leading-[18px] no-underline cursor-pointer py-2"
           >
             ABOUT
-          </a>
+          </Link>
           <Link 
             href="/contact" 
             onClick={() => setIsMenuOpen(false)}
