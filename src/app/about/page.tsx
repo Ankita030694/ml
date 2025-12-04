@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LogoCarousel from "@/components/LogoCarousel";
+import NewsletterCarousel from "@/components/NewsletterCarousel";
 import Image from "next/image";
 
 export default function About() {
@@ -8,17 +9,17 @@ export default function About() {
     <>
       <Navbar />
       {/* Hero Section */}
-      <div className="relative h-[60vh] md:h-[70vh] lg:h-screen w-full overflow-hidden">
+      <div className="relative h-[60vh] md:h-[70vh] lg:h-[90vh] w-full overflow-hidden">
         <Image
           src="/about-hero.jpg"
           alt="Masala Library Restaurant"
           fill
-          className="object-cover"
+          className="object-cover opacity-40"
           priority
         />
         {/* ABOUT US text at bottom middle */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 pb-4 md:pb-8 lg:pb-12 xl:pb-16 px-4">
-          <h1 className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold text-center">
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <h1 className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl font-bold text-center">
             ABOUT US
           </h1>
         </div>
@@ -26,29 +27,25 @@ export default function About() {
 
       {/* Content Section */}
       <div className="bg-[#FFE3C5] w-full py-12 md:py-16 lg:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-8xl mx-auto">
           <p className="text-black font-[family-name:var(--font-poppins)] text-base md:text-lg lg:text-xl font-normal leading-relaxed text-center">
-            A pioneer in progressive Indian gastronomy, Masala Library by Jiggs
-            Kalra is the world's first restaurant to showcase the diverse cuisines of
-            the Indian subcontinent—including India, Pakistan, Sri Lanka, Bangladesh,
-            Nepal, Bhutan, and the Maldives.
+            Masala Library by Jiggs Kalra, a magnum-opus of The Czar of Indian Cuisine & Tastemaker to the Nation – Mr. Jiggs Kalra, aims at showcasing the epicurean lineage of Ancient India, representing culinary excellence from across the geographical landscape of the country.
+          
+            The culinary offering at Masala Library by Jiggs Kalra, endeavour's to offer its patrons a never-before-undertaken gastronomic voyage, capturing the grandeur of centuries-old traditions and the long-lost essence of one of the oldest known gastronomic traditions in the World, combining it with modern day cooking techniques, whilst retaining the traditional preparation for each dish on offer. It aims at recreating the erstwhile culinary traditions in turn offering a truly gastronomical adventure for the connoisseurs.
+         
+            The Masala Library by Jiggs Kalra experience is showcased through its unique spread represented by dishes from the key provinces of the country, each elucidating the rich cultural heritage flown down centuries. Each region, represented in the vast menu, is prepared & presented by Chef's with extensive experience and expertise in the cuisine from the same.
           </p>
           <p className="text-black font-[family-name:var(--font-poppins)] text-base md:text-lg lg:text-xl font-normal leading-relaxed text-center mt-6 md:mt-8">
-            Blending centuries-old culinary heritage with post-modern techniques, it
-            offers a curated gastronomic journey that reinterprets tradition for the
-            modern connoisseur. From ancient customs to forgotten flavors, Masala
-            Library elevates regional cuisine into a contemporary, immersive dining
-            experience
+            In addition to this, the menu at Masala Library by Jiggs Kalra takes pride in showcasing its vegetarian fare through a separate and specifically designed Vegetarian menu giving our patrons another reason to rejoice.
+          </p>
+          <p className="text-black font-[family-name:var(--font-poppins)] text-base md:text-lg lg:text-xl font-normal leading-relaxed text-center mt-6 md:mt-8">
+            Through this experience, Jiggs Kalra promises to offer the finest from across the vast historical land of India, retaining the authenticity of each dish while preparing them using their original traditional methods and recipes in collaboration with some of the oldest known artisans in the field from each region. The main focus of Masala Library by Jiggs Kalra is to revive the traditional recipes from across India with an emphasis on tracing the lineage of the Kebab and serving the greatest Curries of India.
           </p>
         </div>
       </div>
 
-      {/* Newsletter Section */}
-      <div className="bg-[#893F3F] w-full py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-48 flex items-center justify-center px-4">
-        <h2 className="text-white font-[family-name:var(--font-poppins)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center">
-          NEWSLETTER
-        </h2>
-      </div>
+      {/* Newsletter Carousel Section */}
+      <NewsletterCarousel />
 
       {/* Masala Library Section */}
       <div className="bg-white w-full py-8 md:py-12 lg:py-16 xl:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 relative overflow-hidden md:overflow-visible">

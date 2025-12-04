@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center py-4 md:py-[25px] px-4 md:px-[70px] bg-[#3C1E03] w-full h-auto md:h-24 relative overflow-hidden">
+    <nav className="flex justify-between items-center py-4 md:py-[55px] px-4 md:px-[70px] bg-[#893F3F] w-full h-auto md:h-24 relative overflow-hidden">
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -69,7 +69,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#3C1E03] flex flex-col gap-4 p-4 md:hidden z-50 border-t border-[#512904]">
+        <div className="absolute top-full left-0 w-full bg-[#893F3F] flex flex-col gap-4 p-4 md:hidden z-50 border-t border-[#893F3F]">
           <Link 
             href="/about" 
             onClick={() => setIsMenuOpen(false)}

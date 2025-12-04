@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import OurStory from "@/components/OurStory";
+import OurStory2 from "@/components/OurStory2";
 import FollowSection from "@/components/FollowSection";
 import CTA from "@/components/CTA";
 import ImageGallery from "@/components/ImageGallery";
@@ -25,11 +26,8 @@ export default function Home() {
       </div>
       <OurStory />
       <CTA />
+      <OurStory2 />
 
-      <FollowSection />
-      <ImageGallery />
-
-      <Testimonial />
       <Footer />
     </>
   );

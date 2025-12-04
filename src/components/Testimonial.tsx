@@ -1,7 +1,7 @@
 export default function Testimonial() {
   return (
     <section className="bg-[#FFE3C5]">
-      <div className="bg-white border-t border-b border-[#3C1E03] w-full py-10 md:py-12 lg:py-36 px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="w-full py-10 md:py-12 lg:py-36 px-4 sm:px-6 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
           {/* Four-pointed star icon, increased size by 30% */}
           <div className="flex justify-center mb-8 md:mb-10">
