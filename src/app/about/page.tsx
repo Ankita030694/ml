@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import LogoCarousel from "@/components/LogoCarousel";
 import Image from "next/image";
 
 export default function About() {
@@ -52,19 +53,22 @@ export default function About() {
       {/* Masala Library Section */}
       <div className="bg-white w-full py-8 md:py-12 lg:py-16 xl:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 relative overflow-hidden md:overflow-visible">
         {/* Decorative images - peeping in from corners */}
-        <div className="hidden sm:block absolute -top-8 md:-top-12 lg:-top-10 -left-8 md:-left-12 lg:-left-20 w-32 md:w-48 lg:w-64 xl:w-80 h-32 md:h-48 lg:h-64 xl:h-80">
+        <div className="hidden sm:block absolute top-0 left-0 h-full w-32 md:w-48 lg:w-64 xl:w-80">
           <Image
             src="/ml1.png"
             alt="Decorative element"
-            fill
-            className="object-contain rotate-90"
+            height={1200}
+            width={1200}
+            className="object-contain rotate-90 h-full w-full"
+            style={{ objectFit: "contain", height: "100%", width: "100%" }}
           />
         </div>
-        <div className="hidden sm:block absolute -bottom-8 md:-bottom-12 lg:-bottom-16 xl:-bottom-20 -right-8 md:-right-12 lg:-right-16 xl:-right-20 w-32 md:w-48 lg:w-64 xl:w-80 h-32 md:h-48 lg:h-64 xl:h-80">
+        <div className="hidden sm:block absolute -bottom-10 md:-bottom-16 lg:-bottom-21 xl:-bottom-26 -right-10 md:-right-16 lg:-right-21 xl:-right-26 w-40 md:w-62 lg:w-83 xl:w-104 h-40 md:h-62 lg:h-83 xl:h-104">
           <Image
             src="/ml2.png"
             alt="Decorative element"
-            fill
+            height={2600}  // 2000 * 1.3 = 2600
+            width={2600}
             className="object-contain"
           />
         </div>
@@ -108,10 +112,10 @@ export default function About() {
       </section>
 
       {/* Logos Section */}
-      <div className="bg-[#A56565] w-full py-12 md:py-16 lg:py-20 xl:py-24 flex items-center justify-center px-4">
-        <h2 className="text-white font-[family-name:var(--font-poppins)] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center">
-          LOGOS
-        </h2>
+      <div className="bg-white w-full py-12 md:py-16 lg:py-20">
+        <div className="w-full mx-auto">
+          <LogoCarousel />
+        </div>
       </div>
       <Footer />
     </>

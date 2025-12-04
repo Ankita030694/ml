@@ -24,10 +24,11 @@ export default function Home() {
         </video>
       </div>
       <OurStory />
-      <FollowSection />
       <CTA />
+
+      <FollowSection />
       <ImageGallery />
-      <Reviews />
+
       <Testimonial />
       <Footer />
     </>

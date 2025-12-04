@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ImageGallery() {
   return (
-    <section className="w-full flex flex-col md:flex-row">
+    <section className="w-full flex flex-col md:flex-row gap-4 bg-[#FFE3C5]"> 
       <div className="relative w-full md:flex-1 aspect-square overflow-hidden">
         <Image
           src="/image1.jpg"
