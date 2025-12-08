@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import LogoCarousel from "@/components/LogoCarousel";
 import NewsletterCarousel from "@/components/NewsletterCarousel";
+import Carousel from "@/components/Carousel";
 import Image from "next/image";
 
 export default function About() {
@@ -75,38 +76,13 @@ export default function About() {
             MASALA LIBRARY
           </h2>
           <p className="text-black font-[family-name:var(--font-poppins)] text-sm sm:text-base md:text-lg lg:text-xl font-normal leading-relaxed text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Stepping into Masala Library by Jiggs Kalra is an invitation to immerse yourself in an atmosphere where every detail has been thoughtfully curated to honor the rich tapestry of Indian culinary heritage. The dining experience transcends mere consumption, transforming each meal into a narrative journey that connects diners with the stories, techniques, and passion that define authentic Indian gastronomy. Our commitment extends beyond the kitchen, embracing a philosophy of hospitality that ensures every guest feels welcomed into a space where tradition meets contemporary elegance, and where the art of Indian cooking is celebrated with the reverence it deserves.
           </p>
         </div>
       </div>
 
       {/* Image Gallery Section */}
-      <section className="w-full flex flex-col md:flex-row gap-2 md:gap-4 bg-white">
-        <div className="relative w-full md:flex-1 aspect-square overflow-hidden">
-          <Image
-            src="/image1.jpg"
-            alt="Gallery image 1"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="relative w-full md:flex-1 aspect-square overflow-hidden">
-          <Image
-            src="/image2.jpg"
-            alt="Gallery image 2"
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div className="relative w-full md:flex-1 aspect-square overflow-hidden">
-          <Image
-            src="/image3.jpg"
-            alt="Gallery image 3"
-            fill
-            className="object-cover"
-          />
-        </div>
-      </section>
+      <Carousel />
 
       {/* Logos Section */}
       <div className="bg-white w-full py-12 md:py-16 lg:py-20">

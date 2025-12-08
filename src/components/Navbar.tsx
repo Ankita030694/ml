@@ -41,30 +41,34 @@ export default function Navbar() {
 
       {/* Logo - Hidden on mobile, centered on desktop */}
       <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:block">
-        <Image 
-          src="/ml-logo.png" 
-          alt="Masala Library Logo" 
-          width={100} 
-          height={100}
-          className="object-contain max-h-[100px]"
-        />
+        <Link href="/">
+          <Image 
+            src="/ml-logo.png" 
+            alt="Masala Library Logo" 
+            width={100} 
+            height={100}
+            className="object-contain max-h-[100px]"
+          />
+        </Link>
       </div>
 
       {/* Mobile Logo - Visible only on mobile */}
       <div className="md:hidden absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <Image 
-          src="/ml-logo.png" 
-          alt="Masala Library Logo" 
-          width={60} 
-          height={60}
-          className="object-contain max-h-[60px]"
-        />
+        <Link href="/">
+          <Image 
+            src="/ml-logo.png" 
+            alt="Masala Library Logo" 
+            width={60} 
+            height={60}
+            className="object-contain max-h-[60px]"
+          />
+        </Link>
       </div>
 
       {/* Desktop Action Buttons */}
       <div className="hidden md:flex items-center gap-[22px] lg:gap-[44px]">
-        <button className="flex py-[14px] px-[20px] lg:px-[25px] justify-center items-center gap-[7px] rounded-[7px] border-[1.4px] border-[#FFE3C5] bg-transparent text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] lg:text-[18px] font-medium leading-[18px] cursor-pointer">Call Us</button>
-        <button className="flex py-[14px] px-[20px] lg:px-[25px] justify-center items-center gap-[7px] rounded-[7px] bg-[#FFE3C5] border-none text-black font-[family-name:var(--font-poppins)] text-[16px] lg:text-[18px] font-medium leading-[18px] cursor-pointer">Reservation</button>
+        <a href="https://wa.me/8454900900" target="_blank" rel="noopener noreferrer" className="flex py-[14px] px-[20px] lg:px-[25px] justify-center items-center gap-[7px] rounded-[7px] border-[1.4px] border-[#FFE3C5] bg-transparent text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] lg:text-[18px] font-medium leading-[18px] cursor-pointer no-underline">Call Us</a>
+        <Link href="/reservation" className="flex py-[14px] px-[20px] lg:px-[25px] justify-center items-center gap-[7px] rounded-[7px] bg-[#FFE3C5] border-none text-black font-[family-name:var(--font-poppins)] text-[16px] lg:text-[18px] font-medium leading-[18px] cursor-pointer no-underline">Reservation</Link>
       </div>
 
       {/* Mobile Menu Dropdown */}
@@ -91,12 +95,12 @@ export default function Navbar() {
           >
             MENU
           </a>
-          <button className="flex py-3 px-5 justify-center items-center gap-[7px] rounded-[7px] border-[1.4px] border-[#FFE3C5] bg-transparent text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] font-medium leading-[18px] cursor-pointer w-full mt-2">
+          <a href="https://wa.me/8454900900" target="_blank" rel="noopener noreferrer" className="flex py-3 px-5 justify-center items-center gap-[7px] rounded-[7px] border-[1.4px] border-[#FFE3C5] bg-transparent text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] font-medium leading-[18px] cursor-pointer w-full mt-2 no-underline">
             Call Us
-          </button>
-          <button className="flex py-3 px-5 justify-center items-center gap-[7px] rounded-[7px] bg-[#FFE3C5] border-none text-black font-[family-name:var(--font-poppins)] text-[16px] font-medium leading-[18px] cursor-pointer w-full">
+          </a>
+          <Link href="/reservation" onClick={() => setIsMenuOpen(false)} className="flex py-3 px-5 justify-center items-center gap-[7px] rounded-[7px] bg-[#FFE3C5] border-none text-black font-[family-name:var(--font-poppins)] text-[16px] font-medium leading-[18px] cursor-pointer w-full no-underline">
             Reservation
-          </button>
+          </Link>
         </div>
       )}
     </nav>
