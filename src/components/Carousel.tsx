@@ -113,11 +113,12 @@ export default function Carousel() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                {getVisibleImages().map((src, idx) => (
-                 <div key={`${src}-${idx}`} className="relative aspect-[4/3] w-full overflow-hidden rounded-lg shadow-md group">
+                 <div key={`${src}-${idx}`} className="relative w-full overflow-hidden rounded-lg shadow-md group">
                    <Image
                      src={src}
                      alt={`Gallery Image ${currentIndex + idx + 1}`}
-                     fill
+                     width={2000}
+                     height={2000}
                      className="object-cover transition-transform duration-500 group-hover:scale-110"
                    />
                  </div>
