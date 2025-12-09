@@ -163,7 +163,7 @@ const ReservationForm = () => {
       setOutlets(outletsData);
       setLoading(false);
       if (outletsData.length > 0) {
-        const sortedTimeSlots = outletsData[0].timeSlots.sort((a: string, b: string) => {
+        const sortedTimeSlots = (outletsData[0] as any).timeSlots.sort((a: string, b: string) => {
           return parseTime(a) - parseTime(b);
         });
         setSelectedOutlet(outletsData[0]);
@@ -262,7 +262,7 @@ const ReservationForm = () => {
         countryCode: formData.countryCode,
       };
 
-      await FirestoreService.add("Reservations", reservation);
+      await FirestoreService.add("reservations", reservation);
       navigate.push("/thanks");
 
       // Reset form fields (except outlet)

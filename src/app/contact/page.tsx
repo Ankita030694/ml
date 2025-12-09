@@ -1,7 +1,47 @@
+"use client";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { useState } from "react";
+import { db } from "@/lib/firebase";
+import { collection, addDoc } from "firebase/firestore";
+
+import { useRouter } from "next/navigation";
 
 export default function Contact() {
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<{ type: "success" | "error" | null; message: string }>({ type: null, message: "" });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus({ type: null, message: "" });
+
+    try {
+      await addDoc(collection(db, "contact"), {
+        ...formData,
+        createdAt: new Date(),
+      });
+      setFormData({ fullName: "", email: "", phone: "", message: "" });
+      router.push("/thanks");
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      setStatus({ type: "error", message: "Failed to send message. Please try again." });
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <Navbar />
@@ -86,7 +126,7 @@ export default function Contact() {
                 Get in Touch
               </h2>
 
-              <form className="flex flex-col gap-5 md:gap-6">
+              <form onSubmit={handleSubmit} className="flex flex-col gap-5 md:gap-6">
                 <div className="flex flex-col gap-2">
                   <label 
                     htmlFor="fullName" 
@@ -98,6 +138,9 @@ export default function Contact() {
                     type="text"
                     id="fullName"
                     name="fullName"
+                    value={formData.fullName}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-[#3C1E03] bg-white text-[#3C1E03] font-[family-name:var(--font-poppins)] text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#3C1E03]"
                     placeholder="Enter your full name"
                   />
@@ -114,6 +157,9 @@ export default function Contact() {
                     type="email"
                     id="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-[#3C1E03] bg-white text-[#3C1E03] font-[family-name:var(--font-poppins)] text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#3C1E03]"
                     placeholder="Enter your email address"
                   />
@@ -130,6 +176,9 @@ export default function Contact() {
                     type="tel"
                     id="phone"
                     name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-[#3C1E03] bg-white text-[#3C1E03] font-[family-name:var(--font-poppins)] text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#3C1E03]"
                     placeholder="Enter your phone number"
                   />
@@ -146,16 +195,26 @@ export default function Contact() {
                     id="message"
                     name="message"
                     rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     className="w-full px-4 py-2.5 md:py-3 rounded-lg border border-[#3C1E03] bg-white text-[#3C1E03] font-[family-name:var(--font-poppins)] text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#3C1E03] resize-none"
                     placeholder="Enter your message"
                   ></textarea>
                 </div>
 
+                {status.message && (
+                  <div className={`p-3 rounded-lg ${status.type === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                    {status.message}
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full py-3 md:py-4 px-6 rounded-lg bg-[#3C1E03] text-white font-[family-name:var(--font-poppins)] text-base md:text-lg font-medium hover:bg-[#512904] transition-colors duration-200 cursor-pointer"
+                  disabled={loading}
+                  className="w-full py-3 md:py-4 px-6 rounded-lg bg-[#3C1E03] text-white font-[family-name:var(--font-poppins)] text-base md:text-lg font-medium hover:bg-[#512904] transition-colors duration-200 cursor-pointer disabled:opacity-70"
                 >
-                  Submit
+                  {loading ? "Sending..." : "Submit"}
                 </button>
               </form>
             </div>

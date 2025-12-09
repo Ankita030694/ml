@@ -26,6 +26,7 @@ export default function Home() {
         </video>
       </div>
       <OurStory />
+      <CTA />
 
       <OurStory2 />
       <Instagram />

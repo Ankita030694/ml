@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "firebase": "^12.6.0",
     "framer-motion": "^12.23.25",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.556.0",

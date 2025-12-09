@@ -26,19 +26,19 @@ const CTA = () => {
 
   return (
     <div className="w-full py-16 relative bg-[#FFE3C5]">
-      <div className="w-full bg-white shadow-[0_4px_20px_rgba(233,114,132,0.3)] p-8 relative overflow-hidden">
+      <div className="w-full bg-white shadow-[0_4px_20px_rgba(233,114,132,0.3)] p-32 relative overflow-hidden">
         {/* Decorative images */}
-        <div className="absolute -left-1 top-1/2 -translate-y-1/2 w-40 h-40 z-10 hidden md:block">
+        <div className="absolute left-20 -top-8 w-80 h-80 -translate-x-1/2 z-10 hidden md:block">
              <Image 
-                src="/image1.jpg" 
+                src="/gal/6.png" 
                 alt="Decorative left" 
                 fill
                 className="object-contain"
              />
         </div>
-        <div className="absolute -right-1 top-1/2 -translate-y-1/2 w-40 h-40 z-10 hidden md:block">
+        <div className="absolute right-20 -bottom-20 w-100 h-100 translate-x-1/2 z-10 hidden md:block">
             <Image 
-                src="/image2.jpg" 
+                src="/gal/5.png" 
                 alt="Decorative right" 
                 fill
                 className="object-contain"
