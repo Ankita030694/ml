@@ -12,7 +12,7 @@ export default function Navbar() {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
-        className="md:hidden text-[#FFE3C5] p-2"
+        className="md:hidden text-[#FFE3C5] p-2 z-50 relative"
         aria-label="Toggle menu"
       >
         <svg
@@ -53,7 +53,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Logo - Visible only on mobile */}
-      <div className="md:hidden absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="md:hidden absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
         <Link href="/">
           <Image 
             src="/ml-logo.png" 
@@ -67,13 +67,13 @@ export default function Navbar() {
 
       {/* Desktop Action Buttons */}
       <div className="hidden md:flex items-center gap-[22px] lg:gap-[44px]">
-        <a href="https://wa.me/8454900900" target="_blank" rel="noopener noreferrer" className="flex py-[14px] px-[20px] lg:px-[25px] justify-center items-center gap-[7px] rounded-[7px] border-[1.4px] border-[#FFE3C5] bg-transparent text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] lg:text-[18px] font-medium leading-[18px] cursor-pointer no-underline">Call Us</a>
+        <a href="tel:+918454900900" className="flex py-[14px] px-[20px] lg:px-[25px] justify-center items-center gap-[7px] rounded-[7px] border-[1.4px] border-[#FFE3C5] bg-transparent text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] lg:text-[18px] font-medium leading-[18px] cursor-pointer no-underline">Call Us</a>
         <Link href="/reservation" className="flex py-[14px] px-[20px] lg:px-[25px] justify-center items-center gap-[7px] rounded-[7px] bg-[#FFE3C5] border-none text-black font-[family-name:var(--font-poppins)] text-[16px] lg:text-[18px] font-medium leading-[18px] cursor-pointer no-underline">Reservation</Link>
       </div>
 
       {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#893F3F] flex flex-col gap-4 p-4 md:hidden z-50 border-t border-[#893F3F]">
+        <div className="absolute top-full left-0 w-full bg-[#893F3F] flex flex-col gap-4 p-4 md:hidden z-[100] border-t border-[#893F3F] shadow-lg">
           <Link 
             href="/about" 
             onClick={() => setIsMenuOpen(false)}
@@ -95,7 +95,7 @@ export default function Navbar() {
           >
             MENU
           </a>
-          <a href="https://wa.me/8454900900" target="_blank" rel="noopener noreferrer" className="flex py-3 px-5 justify-center items-center gap-[7px] rounded-[7px] border-[1.4px] border-[#FFE3C5] bg-transparent text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] font-medium leading-[18px] cursor-pointer w-full mt-2 no-underline">
+          <a href="tel:+918454900900" className="flex py-3 px-5 justify-center items-center gap-[7px] rounded-[7px] border-[1.4px] border-[#FFE3C5] bg-transparent text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[16px] font-medium leading-[18px] cursor-pointer w-full mt-2 no-underline">
             Call Us
           </a>
           <Link href="/reservation" onClick={() => setIsMenuOpen(false)} className="flex py-3 px-5 justify-center items-center gap-[7px] rounded-[7px] bg-[#FFE3C5] border-none text-black font-[family-name:var(--font-poppins)] text-[16px] font-medium leading-[18px] cursor-pointer w-full no-underline">
