@@ -71,6 +71,11 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-[#FFE3C5] border-opacity-20">
+        <p className="text-[#FFE3C5] font-[family-name:var(--font-poppins)] text-[12px] md:text-[14px] font-normal leading-[16px] text-center opacity-80">
+          Design and Developed by Designncode
+        </p>
+      </div>
     </footer>
   );
 }
