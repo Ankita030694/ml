@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import WhatsAppWidget from "@/components/WhatsAppWidget";
+import MobileBottomNav from "@/components/MobileBottomNav";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -64,6 +65,7 @@ export default function RootLayout({
         </noscript>
         {/* End Meta Pixel Code */}
         {children}
+        <MobileBottomNav />
         <WhatsAppWidget />
       </body>
     </html>

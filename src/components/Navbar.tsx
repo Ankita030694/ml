@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center py-4 md:py-[55px] px-4 md:px-[70px] bg-[#893F3F] w-full h-auto md:h-24 relative overflow-hidden">
+    <nav className="flex justify-between items-center py-4 md:py-[55px] px-4 md:px-[70px] bg-[#893F3F] w-full h-auto md:h-24 relative z-50">
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -54,7 +54,7 @@ export default function Navbar() {
 
       {/* Mobile Logo - Visible only on mobile */}
       <div className="md:hidden absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
-        <Link href="/">
+        <Link href="/" className="pointer-events-auto">
           <Image 
             src="/ml-logo.png" 
             alt="Masala Library Logo" 

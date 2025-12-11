@@ -25,8 +25,8 @@ const CTA = () => {
   };
 
   return (
-    <div className="w-full py-16 relative bg-[#FFE3C5]">
-      <div className="w-full bg-white shadow-[0_4px_20px_rgba(233,114,132,0.3)] p-32 relative overflow-hidden">
+    <div className="w-full py-8 md:py-16 relative bg-[#FFE3C5]">
+      <div className="w-full bg-white shadow-[0_4px_20px_rgba(233,114,132,0.3)] p-8 md:p-32 relative overflow-hidden">
         {/* Decorative images */}
         <div className="absolute left-20 -top-8 w-80 h-80 -translate-x-1/2 z-10 hidden md:block">
              <Image 
@@ -52,7 +52,7 @@ const CTA = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={fadeInUpVariants}
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#000000] mb-8">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#000000] mb-6 md:mb-8">
             WANT TO BOOK A TABLE?
           </h2>
 
